@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Steward Console · ARK Loot Bible</title><link rel="stylesheet" href="/static/admin.css"></head>
+<body><header><a href="/" class="brand">ARK <strong>Loot Bible</strong></a><div><span>Data Steward Console</span><a href="/admin/sources">Sources</a><a href="/docs">API</a></div></header>
+<main><section class="intro"><div><p class="eyebrow">Evidence-first operations</p><h1>Prüfen. Entscheiden. Promoten.</h1><p>Ein kontrollierter Arbeitsbereich zwischen Import-Staging und kanonischer Datenbank.</p></div><button id="refresh">Aktualisieren</button></section>
+<section id="metrics" class="metrics"></section>
+<section class="workspace"><aside><div class="aside-head"><h2>Review Queue</h2><select id="filter"><option value="">Alle</option><option>OPEN</option><option>CONFLICT</option><option>APPROVED</option><option>PROMOTED</option><option>REJECTED</option></select></div><div id="queue" class="queue"><p class="muted">Lade …</p></div></aside>
+<article id="detail"><div class="empty"><h2>Prüffall auswählen</h2><p>Claims, Konflikte und Promotion-Diff erscheinen hier schrittweise.</p></div></article></section></main>
+<footer>Canonical before convenient · <span id="version"></span></footer><script src="/static/admin.js"></script></body></html>

@@ -1,0 +1,22 @@
+entity_type,id_prefix,next_sequence,width,description
+MAP,MAP,1,6,Official or scoped game map
+CREATURE,CREATURE,1,6,Base creature species
+CREATURE_VARIANT,CVAR,1,6,Creature variant
+CREATURE_SPAWN,CSPAWN,1,6,Creature spawn entry
+SPAWN_REGION,SREG,1,6,Map spawn region
+SPAWN_CONTAINER,SCON,1,6,Spawn container
+ITEM,ITEM,1,6,Canonical item
+BLUEPRINT,BP,1,6,Blueprint record
+LOOT_SOURCE,LSRC,1,6,Loot source
+LOOT_SET,LSET,1,6,Loot set
+LOOT_ENTRY,LENT,1,6,Loot entry
+BOSS,BOSS,1,6,Boss
+BOSS_REWARD,BREWARD,1,6,Boss reward
+TEKGRAM,TEK,1,6,Tekgram
+ARTIFACT,ART,1,6,Artifact
+DOSSIER,DOSSIER,1,6,Creature dossier
+EXPLORER_NOTE,ENOTE,1,6,Explorer note
+EVIDENCE,EVID,1,6,Evidence claim
+SOURCE,SRC,1,6,Source registry entry
+RELATIONSHIP,REL,1,6,Generic entity relationship
+ALIAS,ALIAS,1,6,Entity alias

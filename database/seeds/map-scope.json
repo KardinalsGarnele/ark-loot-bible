@@ -1,0 +1,106 @@
+[
+  {
+    "scope_id": "MAPSCOPE-000001",
+    "map_name": "The Island",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000002",
+    "map_name": "Scorched Earth",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000003",
+    "map_name": "Aberration",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000004",
+    "map_name": "Extinction",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000005",
+    "map_name": "Genesis 1",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000006",
+    "map_name": "Genesis 2",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000007",
+    "map_name": "Ragnarok",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000008",
+    "map_name": "Valguero",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000009",
+    "map_name": "Crystal Isles",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000010",
+    "map_name": "Lost Island",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000011",
+    "map_name": "Fjordur",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000012",
+    "map_name": "The Center",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  },
+  {
+    "scope_id": "MAPSCOPE-000013",
+    "map_name": "Astraeos",
+    "scope_status": "PLANNED",
+    "official_status": "NEEDS_VERIFICATION",
+    "canonical_map_id": null,
+    "notes": "Included in user-approved project scope; canonical game metadata still requires source verification."
+  }
+]

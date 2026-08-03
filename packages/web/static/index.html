@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ARK Loot Bible – verknüpfte, verifizierbare ARK-Daten.">
+  <title>ARK Loot Bible</title><link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#/">ARK <strong>Loot Bible</strong></a><nav><a href="#/">Suche</a><a href="/docs">API</a></nav></header>
+<main>
+  <section id="home" class="hero">
+    <p class="eyebrow">Simple for players · Powerful by design</p>
+    <h1>Ein Suchfeld.<br><span>Das ganze ARK-Universum.</span></h1>
+    <p class="lead">Creatures, Items, Blueprints und Loot als verbundenes Wissensnetz – mit sichtbarem Verifikationsstatus statt geratenen Werten.</p>
+    <form id="search-form" class="search" role="search"><input id="search" autocomplete="off" placeholder="Rex, Saddle, Blueprint …" aria-label="Alles durchsuchen"><button>Suchen</button></form>
+    <label class="toggle"><input id="preview" type="checkbox"> Entwicklungsvorschau anzeigen</label>
+    <section id="status" class="status" aria-live="polite"></section><section id="results" class="grid"></section>
+  </section>
+  <section id="entity" hidden></section>
+</main>
+<footer>Build the platform. Everything else is an interface. · <span id="version"></span></footer>
+<script src="/static/app.js"></script></body></html>

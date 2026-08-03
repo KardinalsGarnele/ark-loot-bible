@@ -1,0 +1,71 @@
+{
+  "manifest_code": "ITEM-REX-SADDLE-STRUCTURE-001",
+  "content_type": "ITEM_BLUEPRINT_PACKAGE",
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "SRC-STRUCTURAL-REX-SADDLE",
+    "source_type": "PROJECT_REFERENCE",
+    "title": "Rex Saddle structural reference package",
+    "locator": "project://references/rex-saddle",
+    "publisher": "ARK Loot Bible"
+  },
+  "item": {
+    "item_id": "ITEM-000001",
+    "canonical_name": "Rex Saddle",
+    "game_title": "ARK: Survival Ascended",
+    "item_category": "SADDLE",
+    "quality_capable": true,
+    "verification_status": "NEEDS_VERIFICATION"
+  },
+  "blueprint": {
+    "blueprint_id": "BP-000001",
+    "canonical_name": "Rex Saddle Blueprint",
+    "blueprint_type": "ITEM_BLUEPRINT",
+    "can_be_looted": null,
+    "can_be_crafted": null,
+    "verification_status": "NEEDS_VERIFICATION"
+  },
+  "components": [
+    {
+      "component_type": "CLASSIFICATION",
+      "display_name": "Classification",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "BLUEPRINTS",
+      "display_name": "Blueprints",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "CRAFTING",
+      "display_name": "Crafting",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "REPAIR",
+      "display_name": "Repair",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "LOOT",
+      "display_name": "Loot Sources",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "CREATURE_USE",
+      "display_name": "Creature Use",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "MAP_AVAILABILITY",
+      "display_name": "Map Availability",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "TECHNICAL",
+      "display_name": "Technical Data",
+      "component_status": "EMPTY"
+    }
+  ],
+  "notes": "Structural reference only. Crafting costs, loot sources, class names, paths and quality values require evidence."
+}

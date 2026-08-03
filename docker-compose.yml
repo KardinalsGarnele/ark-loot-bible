@@ -1,0 +1,8 @@
+services:
+  ark-loot-bible:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./database/generated:/app/database/generated
+    restart: unless-stopped

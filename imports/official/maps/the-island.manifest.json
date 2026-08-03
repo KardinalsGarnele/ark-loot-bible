@@ -1,0 +1,70 @@
+{
+  "manifest_code": "OFFICIAL-MAP-THE-ISLAND-001",
+  "content_type": "OFFICIAL_MAP_PACKAGE",
+  "target_entity_type": "MAP",
+  "schema_version": "1.0",
+  "game_version": null,
+  "source": {
+    "source_id": "SRC-OFFICIAL-WIKI-THE-ISLAND",
+    "source_type": "OFFICIAL_WIKI",
+    "title": "The Island \u2014 ARK Official Community Wiki",
+    "locator": "https://ark.wiki.gg/wiki/The_Island",
+    "publisher": "ARK Official Community Wiki"
+  },
+  "facts": {
+    "canonical_name": "The Island",
+    "game_title": "ARK: Survival Ascended",
+    "map_kind": "STORY",
+    "included_with_base_game": true,
+    "official": true,
+    "release_status": "RELEASED",
+    "verification_status": "VERIFIED"
+  },
+  "components": [
+    {
+      "component_type": "REGION_COLLECTION",
+      "display_name": "Regions",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "SPAWN_COLLECTION",
+      "display_name": "Creature Spawns",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "LOOT_COLLECTION",
+      "display_name": "Loot Sources",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "CAVE_COLLECTION",
+      "display_name": "Caves",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "ARTIFACT_COLLECTION",
+      "display_name": "Artifacts",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "BOSS_COLLECTION",
+      "display_name": "Boss Arenas",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "EXPLORER_NOTE_COLLECTION",
+      "display_name": "Explorer Notes",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "RESOURCE_COLLECTION",
+      "display_name": "Resources",
+      "component_status": "EMPTY"
+    }
+  ],
+  "evidence_notes": {
+    "canonical_name": "Official source identifies the map as The Island.",
+    "included_with_base_game": "Official source states The Island is included with the base game.",
+    "map_kind": "Official source describes The Island as the first map following the storyline."
+  }
+}

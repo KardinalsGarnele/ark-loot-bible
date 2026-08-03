@@ -1,0 +1,87 @@
+{
+  "manifest_code": "LOOT-THE-ISLAND-SUPPLY-DROP-STRUCTURE-001",
+  "content_type": "LOOT_SOURCE_PACKAGE",
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "SRC-STRUCTURAL-THE-ISLAND-SUPPLY",
+    "source_type": "PROJECT_REFERENCE",
+    "title": "The Island Supply Drop structural package",
+    "locator": "project://references/the-island-supply-drop",
+    "publisher": "ARK Loot Bible"
+  },
+  "loot_source": {
+    "loot_source_id": "LOOTSOURCE-000001",
+    "canonical_name": "The Island Supply Drop Reference",
+    "map_id": "MAP-000001",
+    "source_type": "SUPPLY_DROP",
+    "verification_status": "NEEDS_VERIFICATION"
+  },
+  "loot_sets": [
+    {
+      "loot_set_id": "LOOTSET-000001",
+      "canonical_name": "Reference Loot Set",
+      "selection_weight": null,
+      "min_rolls": null,
+      "max_rolls": null,
+      "verification_status": "NEEDS_VERIFICATION",
+      "entries": [
+        {
+          "loot_entry_id": "LOOTENTRY-000001",
+          "canonical_name": "Rex Saddle Blueprint Reference Entry",
+          "item_id": "ITEM-000001",
+          "blueprint_id": "BP-000001",
+          "entry_weight": null,
+          "min_quantity": null,
+          "max_quantity": null,
+          "blueprint_chance": null,
+          "effective_quality_min": null,
+          "effective_quality_max": null,
+          "verification_status": "NEEDS_VERIFICATION"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "component_type": "IDENTITY",
+      "display_name": "Identity",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "QUALITY_PROFILE",
+      "display_name": "Quality Profile",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "RESPAWN",
+      "display_name": "Respawn",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "LOOT_SETS",
+      "display_name": "Loot Sets",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "LOOT_ENTRIES",
+      "display_name": "Loot Entries",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "MAP_RELATION",
+      "display_name": "Map Relation",
+      "component_status": "PARTIAL"
+    },
+    {
+      "component_type": "COORDINATES",
+      "display_name": "Coordinates",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "TECHNICAL",
+      "display_name": "Technical Data",
+      "component_status": "EMPTY"
+    }
+  ],
+  "notes": "Structural proof only. Color, ring, level, weights, chances, quality and respawn require evidence."
+}

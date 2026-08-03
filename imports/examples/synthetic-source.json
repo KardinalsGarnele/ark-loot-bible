@@ -1,0 +1,10 @@
+{
+  "source_id": "SRC-TEST-000001",
+  "source_type": "TEST_FIXTURE",
+  "title": "Synthetic Import Fixture",
+  "locator": "imports/examples/synthetic-creature-claims.csv",
+  "publisher": "ARK Loot Bible Tests",
+  "captured_at": "2026-07-30T00:00:00Z",
+  "version_label": "fixture-1",
+  "notes": "Contains no ARK gameplay claims."
+}

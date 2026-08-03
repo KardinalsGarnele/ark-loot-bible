@@ -1,0 +1,3 @@
+source_row_key,entity_type,proposed_entity_id,proposed_canonical_name,field_name,claim_value,evidence_strength,notes
+synthetic-001,CREATURE,,Synthetic Test Creature,canonical_name,Synthetic Test Creature,PRIMARY,Automated test fixture only
+synthetic-001,CREATURE,,Synthetic Test Creature,tameable,true,UNASSESSED,Must remain quarantined without assessed evidence

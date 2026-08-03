@@ -1,0 +1,86 @@
+{
+  "status": "REFERENCE_MODEL_ONLY",
+  "canonical_data_included": false,
+  "reason": "This graph validates IDs and relationships. Gameplay claims remain unpublished until official evidence is attached.",
+  "entities": [
+    {
+      "id": "REF-CREATURE-000001",
+      "type": "Creature",
+      "name": "Rex"
+    },
+    {
+      "id": "REF-CVAR-000001",
+      "type": "CreatureVariant",
+      "name": "Rex base variant"
+    },
+    {
+      "id": "REF-ITEM-000001",
+      "type": "Item",
+      "name": "Rex Saddle"
+    },
+    {
+      "id": "REF-BP-000001",
+      "type": "Blueprint",
+      "name": "Rex Saddle Blueprint"
+    },
+    {
+      "id": "REF-LSRC-000001",
+      "type": "LootSource",
+      "name": "Verified loot source pending"
+    },
+    {
+      "id": "REF-MAP-000001",
+      "type": "Map",
+      "name": "Verified map pending"
+    },
+    {
+      "id": "REF-SREG-000001",
+      "type": "SpawnRegion",
+      "name": "Verified Rex spawn region pending"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "REF-REL-000001",
+      "subject": "REF-CREATURE-000001",
+      "predicate": "HAS_VARIANT",
+      "object": "REF-CVAR-000001"
+    },
+    {
+      "id": "REF-REL-000002",
+      "subject": "REF-CREATURE-000001",
+      "predicate": "USES_ITEM",
+      "object": "REF-ITEM-000001"
+    },
+    {
+      "id": "REF-REL-000003",
+      "subject": "REF-ITEM-000001",
+      "predicate": "HAS_BLUEPRINT",
+      "object": "REF-BP-000001"
+    },
+    {
+      "id": "REF-REL-000004",
+      "subject": "REF-BP-000001",
+      "predicate": "APPEARS_IN",
+      "object": "REF-LSRC-000001"
+    },
+    {
+      "id": "REF-REL-000005",
+      "subject": "REF-LSRC-000001",
+      "predicate": "LOCATED_ON",
+      "object": "REF-MAP-000001"
+    },
+    {
+      "id": "REF-REL-000006",
+      "subject": "REF-CVAR-000001",
+      "predicate": "SPAWNS_IN",
+      "object": "REF-SREG-000001"
+    },
+    {
+      "id": "REF-REL-000007",
+      "subject": "REF-SREG-000001",
+      "predicate": "LOCATED_ON",
+      "object": "REF-MAP-000001"
+    }
+  ]
+}

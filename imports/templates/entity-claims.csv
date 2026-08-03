@@ -1,0 +1,2 @@
+source_row_key,entity_type,proposed_entity_id,proposed_canonical_name,field_name,claim_value,evidence_strength,notes
+row-001,CREATURE,,Example Creature,canonical_name,Example Creature,PRIMARY,Template only; not canonical gameplay data

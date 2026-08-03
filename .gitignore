@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.sqlite-journal
+node_modules/
+dist/
+build/
+coverage/
+exports/generated/
+.venv/
+*.egg-info/
+.pytest_cache/
+__pycache__/
+*.pyc
+.env
+database/generated/*.sqlite

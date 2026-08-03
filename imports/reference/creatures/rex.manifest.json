@@ -1,0 +1,77 @@
+{
+  "manifest_code": "REFERENCE-CREATURE-REX-001",
+  "content_type": "CREATURE_PACKAGE",
+  "schema_version": "1.0",
+  "source": {
+    "source_id": "SRC-PROJECT-REFERENCE-REX",
+    "source_type": "PROJECT_REFERENCE",
+    "title": "Rex structural reference package",
+    "locator": "repository://imports/reference/creatures/rex.manifest.json",
+    "publisher": "ARK Loot Bible"
+  },
+  "facts": {
+    "creature_id": "CREATURE-000001",
+    "canonical_name": "Rex",
+    "game_title": "ARK: Survival Ascended",
+    "verification_status": "NEEDS_VERIFICATION"
+  },
+  "default_variant": {
+    "variant_id": "VARIANT-000001",
+    "canonical_name": "Rex (Base)",
+    "variant_type": "BASE",
+    "verification_status": "NEEDS_VERIFICATION"
+  },
+  "components": [
+    {
+      "component_type": "VARIANTS",
+      "display_name": "Variants",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "MAP_PRESENCE",
+      "display_name": "Map Presence",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "SPAWNS",
+      "display_name": "Spawns",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "TAMING",
+      "display_name": "Taming",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "BREEDING",
+      "display_name": "Breeding",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "STATS",
+      "display_name": "Stats",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "DROPS",
+      "display_name": "Drops",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "HARVEST",
+      "display_name": "Harvest",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "SADDLE",
+      "display_name": "Saddle",
+      "component_status": "EMPTY"
+    },
+    {
+      "component_type": "DOSSIER",
+      "display_name": "Dossier",
+      "component_status": "EMPTY"
+    }
+  ],
+  "notes": "Structural proof of concept only. No gameplay claims are promoted."
+}

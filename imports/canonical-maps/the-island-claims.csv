@@ -1,0 +1,6 @@
+source_row_key,entity_type,proposed_entity_id,proposed_canonical_name,field_name,claim_value,evidence_strength,notes
+map-the-island,MAP,MAP-000001,The Island,canonical_name,The Island,SECONDARY,Page title and lead identify the map.
+map-the-island,MAP,MAP-000001,The Island,game_title,ARK: Survival Ascended,SECONDARY,Wiki page covers ASA and ASE; this record is scoped to ASA.
+map-the-island,MAP,MAP-000001,The Island,map_kind,STORY,SECONDARY,Lead identifies it as the first map following the storyline.
+map-the-island,MAP,MAP-000001,The Island,included_with_base_game,true,SECONDARY,Lead states the map is included with the base game.
+map-the-island,MAP,MAP-000001,The Island,official,true,SECONDARY,Official community wiki map classification.

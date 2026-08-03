@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loot Matrix · ARK Loot Bible</title><link rel="stylesheet" href="/static/loot-matrix.css"></head>
+<body><header><a href="/" class="brand">ARK <strong>Loot Bible</strong></a><nav><a href="/admin">Reviews</a><a href="/admin/sources">Sources</a><a href="/docs">API</a></nav></header>
+<main><section class="hero"><div><p class="eyebrow">Loot Matrix</p><h1>Map → Farbe → Ring → Level → Blueprint</h1><p>Direkt berechnete Qualitätsbereiche, ohne versteckte Annahmen.</p></div><div class="exports"><a id="csv" href="/api/v1/loot-matrix/export.csv">CSV</a><a id="json" href="/api/v1/loot-matrix/export.json">JSON</a></div></section>
+<section class="filters">
+<label>Map<input id="map" placeholder="MAP-000001"></label>
+<label>Bereich<select id="group"><option value="">Alle</option><option value="SURFACE_SUPPLY">Supply Drops</option><option value="CAVE">Cave Loot</option><option value="DEEP_SEA">Deep Sea</option><option value="BOSS_TEK">Boss / Tek</option><option value="CREATURE_DROP">Creature Drops</option><option value="FISHING">Fishing</option><option value="MISSION">Missions</option><option value="OSD">OSD</option><option value="OTHER">Other</option></select></label><label>Farbe<select id="color"><option value="">Alle</option><option>WHITE</option><option>GREEN</option><option>BLUE</option><option>PURPLE</option><option>YELLOW</option><option>RED</option></select></label>
+<label>Ring<select id="ring"><option value="">Alle</option><option value="true">Mit Ring</option><option value="false">Ohne Ring</option></select></label>
+<label>Min. Level<input id="level" type="number" min="0" placeholder="0"></label>
+<label>Status<select id="status"><option value="">Alle</option><option>VERIFIED</option><option>NEEDS_VERIFICATION</option></select></label>
+<button id="apply">Filtern</button></section>
+<section class="summary" id="summary"></section>
+<section class="table-wrap"><table><thead><tr><th>Map</th><th>Drop</th><th>Level</th><th>Quelle</th><th>Blueprint / Item</th><th>Source Quality</th><th>Item %</th><th>Effektiv</th><th>Status</th></tr></thead><tbody id="rows"><tr><td colspan="9">Lade …</td></tr></tbody></table></section>
+</main><footer>Simple for players. Powerful by design. · <span id="version"></span></footer><script src="/static/loot-matrix.js"></script></body></html>
