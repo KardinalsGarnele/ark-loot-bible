@@ -341,9 +341,14 @@ async function showEntity(id) {
     );
 
     entity.innerHTML = `
-      <a class="back" href="#/">
-        ← Zur Suche
-      </a>
+      
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="#/">Suche</a>
+  <span aria-hidden="true">→</span>
+  <span>${esc(entityLabel(currentEntity.entity_type))}</span>
+  <span aria-hidden="true">→</span>
+  <strong>${esc(currentEntity.canonical_name)}</strong>
+</nav>
 
       <header class="entity-head">
         <div class="entity-title">
