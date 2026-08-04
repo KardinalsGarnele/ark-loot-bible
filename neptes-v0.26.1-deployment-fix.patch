@@ -1,0 +1,109 @@
+--- a/CHANGELOG.md	2026-08-02 22:42:41.000000000 +0000
++++ b/CHANGELOG.md	2026-08-04 18:28:07.358397084 +0000
+@@ -1,5 +1,12 @@
+ # Changelog
+ 
++## 0.26.1
++
++- Fixed static asset root resolution for installed Docker deployments.
++- Added explicit `ARK_LOOT_BIBLE_ROOT` support.
++- Added startup coverage for the home page and static assets.
++
++
+ ## 0.26.0
+ 
+ - Added Dockerfile and Docker Compose.
+--- a/packages/api/ark_loot_bible/config.py	2026-08-02 22:42:41.000000000 +0000
++++ b/packages/api/ark_loot_bible/config.py	2026-08-04 18:28:06.914397098 +0000
+@@ -2,12 +2,39 @@
+ from pathlib import Path
+ import os
+ 
+-ROOT = Path(__file__).resolve().parents[3]
++
++def _resolve_root() -> Path:
++    """Resolve the repository/application root in source and installed builds.
++
++    Docker installs the Python package into site-packages, so deriving the root
++    only from ``__file__`` points at ``/usr/local/lib`` instead of ``/app``.
++    Prefer an explicit environment variable, then the current working directory,
++    and finally walk upwards from this file for a source checkout.
++    """
++    configured = os.getenv("ARK_LOOT_BIBLE_ROOT")
++    if configured:
++        return Path(configured).expanduser().resolve()
++
++    candidates = [Path.cwd(), *Path(__file__).resolve().parents]
++    for candidate in candidates:
++        if (candidate / "packages" / "web" / "static").is_dir():
++            return candidate
++
++    # Keep a deterministic fallback for diagnostics. main.py will raise a clear
++    # error if the expected web assets are not present here.
++    return Path.cwd().resolve()
++
++
++ROOT = _resolve_root()
++
+ 
+ @dataclass(frozen=True)
+ class Settings:
+-    database_path: Path = Path(os.getenv("ARK_LOOT_BIBLE_DB", ROOT / "database/generated/ark_loot_bible.sqlite"))
++    database_path: Path = Path(
++        os.getenv("ARK_LOOT_BIBLE_DB", ROOT / "database/generated/ark_loot_bible.sqlite")
++    )
+     app_name: str = "ARK Loot Bible API"
+-    app_version: str = "0.26.0"
++    app_version: str = "0.26.1"
++
+ 
+ settings = Settings()
+--- a/packages/api/ark_loot_bible/main.py	2026-08-02 13:29:52.000000000 +0000
++++ b/packages/api/ark_loot_bible/main.py	2026-08-04 18:28:07.358397084 +0000
+@@ -23,7 +23,12 @@
+ 
+ app = FastAPI(title=settings.app_name, version=settings.app_version)
+ STATIC = ROOT / "packages/web/static"
+-app.mount("/static", StaticFiles(directory=STATIC), name="static")
++if not STATIC.is_dir():
++    raise RuntimeError(
++        f"Static asset directory not found: {STATIC}. "
++        "Set ARK_LOOT_BIBLE_ROOT to the repository/application root."
++    )
++app.mount("/static", StaticFiles(directory=str(STATIC)), name="static")
+ 
+ @app.get("/", include_in_schema=False)
+ def index():
+--- a/pyproject.toml	2026-08-02 22:42:41.000000000 +0000
++++ b/pyproject.toml	2026-08-04 18:28:07.358397084 +0000
+@@ -4,7 +4,7 @@
+ 
+ [project]
+ name = "ark-loot-bible"
+-version = "0.26.0"
++version = "0.26.1"
+ description = "Canonical ARK knowledge platform"
+ requires-python = ">=3.11"
+ dependencies = ["fastapi>=0.115,<1", "uvicorn[standard]>=0.30,<1", "pydantic>=2.8,<3"]
+--- /dev/null
++++ b/tests/test_startup.py	2026-08-04 18:28:07.490397080 +0000
+@@ -0,0 +1,19 @@
++from pathlib import Path
++
++from fastapi.testclient import TestClient
++
++from ark_loot_bible.config import ROOT
++from ark_loot_bible.main import STATIC, app
++
++
++def test_resolved_root_contains_web_assets():
++    assert ROOT.is_dir()
++    assert STATIC == ROOT / "packages" / "web" / "static"
++    assert (STATIC / "index.html").is_file()
++
++
++def test_application_starts_and_serves_assets():
++    client = TestClient(app)
++    assert client.get("/health").status_code == 200
++    assert client.get("/").status_code == 200
++    assert client.get("/static/app.js").status_code == 200
