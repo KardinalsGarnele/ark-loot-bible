@@ -38,6 +38,25 @@
   margin: 1.5rem 0;
 }
 
+.relationship-meta {
+  display: grid;
+  gap: 0.15rem;
+  margin-top: 0.35rem;
+}
+
+.relationship-type {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.relationship-direction {
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .relationship-summary span {
   display: inline-flex;
   gap: 0.4rem;

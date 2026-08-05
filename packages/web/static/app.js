@@ -255,11 +255,15 @@ function renderRelationship(relationship) {
 
       <strong>${esc(relatedEntity.canonical_name)}</strong>
 
-      <small class="relationship-summary">
-        ${esc(edge.edge_type.replaceAll("_", " "))}
-        •
-        ${outgoing ? "Ausgehend" : "Eingehend"}
-      </small>
+      <div class="relationship-meta">
+  <div class="relationship-type">
+    ${esc(edge.edge_type.replaceAll("_", " "))}
+  </div>
+
+  <small class="relationship-direction">
+    ${outgoing ? "Ausgehend" : "Eingehend"}
+  </small>
+</div>
     </div>
   </a>
 `;
