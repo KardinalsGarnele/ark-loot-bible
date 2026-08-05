@@ -240,3 +240,33 @@
   color: var(--text);
   font-weight: 600;
 }
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.search-filters label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.search-filters label:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.search-filters input {
+  accent-color: var(--accent);
+}

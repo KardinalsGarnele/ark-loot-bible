@@ -12,7 +12,25 @@
     <p class="eyebrow">Simple for players · Powerful by design</p>
     <h1>Ein Suchfeld.<br><span>Das ganze ARK-Universum.</span></h1>
     <p class="lead">Creatures, Items, Blueprints und Loot als verbundenes Wissensnetz – mit sichtbarem Verifikationsstatus statt geratenen Werten.</p>
-    <form id="search-form" class="search" role="search"><input id="search" autocomplete="off" placeholder="Rex, Saddle, Blueprint …" aria-label="Alles durchsuchen"><button>Suchen</button></form>
+    <form id<form id="search-form" class="search" role="search">
+  <input
+    id="search"
+    autocomplete="off"
+    placeholder="Rex, Saddle, Blueprint …"
+    aria-label="Alles durchsuchen"
+  >
+
+  <button>Suchen</button>
+</form>
+
+<div class="search-filters" aria-label="Entity-Typen">
+  <label><input type="checkbox" value="CREATURE" checked> Creature</label>
+  <label><input type="checkbox" value="ITEM" checked> Item</label>
+  <label><input type="checkbox" value="BLUEPRINT" checked> Blueprint</label>
+  <label><input type="checkbox" value="LOOT_SET" checked> Loot Set</label>
+  <label><input type="checkbox" value="LOOT_ENTRY" checked> Loot Entry</label>
+  <label><input type="checkbox" value="CREATURE_VARIANT" checked> Variant</label>
+</div>
     <label class="toggle"><input id="preview" type="checkbox"> Entwicklungsvorschau anzeigen</label>
     <section id="status" class="status" aria-live="polite"></section><section id="results" class="grid"></section>
   </section>

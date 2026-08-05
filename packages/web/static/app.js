@@ -7,6 +7,9 @@ const input = $("#search");
 const status = $("#status");
 const results = $("#results");
 const preview = $("#preview");
+const typeFilters = () =>
+  [...document.querySelectorAll(".search-filters input:checked")]
+    .map((filter) => filter.value);
 
 const labels = {
   CREATURE: "Creature",
@@ -131,11 +134,17 @@ async function search(query = input.value.trim()) {
       `/api/v1/search?q=${encodeURIComponent(query)}&include_unverified=${preview.checked}`,
     );
 
-    status.textContent = data.length
-      ? `${data.length} Ergebnis${data.length === 1 ? "" : "se"}`
+const selectedTypes = typeFilters();
+
+const filteredData = data.filter((result) =>
+  selectedTypes.includes(result.entity_type),
+);
+
+    status.textContent = filtereddata.length
+      ? `${filteredData.length} Ergebnis${filteredData.length === 1 ? "" : "se"}`
       : "Keine passenden Datensätze.";
 
-    results.innerHTML = data.map(renderSearchResult).join("");
+    results.innerHTML = filteredData.map(renderSearchResult).join("");
   } catch (error) {
     status.textContent = `Fehler: ${error.message}`;
   }
@@ -469,6 +478,18 @@ form.addEventListener("submit", (event) => {
 
   search(query);
 });
+
+document
+  .querySelectorAll(".search-filters input")
+  .forEach((filter) => {
+    filter.addEventListener("change", () => {
+      const query = input.value.trim();
+
+      if (query) {
+        search(query);
+      }
+    });
+  });
 
 window.addEventListener("hashchange", route);
 
