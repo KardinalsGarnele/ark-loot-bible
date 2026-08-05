@@ -360,22 +360,37 @@ async function showEntity(id) {
   <strong>${esc(currentEntity.canonical_name)}</strong>
 </nav>
 
-      <header class="entity-head">
-        <div class="entity-title">
-          <span class="entity-type">
-            <span class="entity-icon" aria-hidden="true">
-              ${entityIcon(currentEntity.entity_type)}
-            </span>
+<header class="entity-head">
+  <div class="entity-title">
+    <span class="entity-type">
+      <span class="entity-icon" aria-hidden="true">
+        ${entityIcon(currentEntity.entity_type)}
+      </span>
 
-            ${esc(entityLabel(currentEntity.entity_type))}
-          </span>
+      ${esc(entityLabel(currentEntity.entity_type))}
+    </span>
 
-          <h1>${esc(currentEntity.canonical_name)}</h1>
-          <code>${esc(currentEntity.entity_id)}</code>
-        </div>
+    <h1>${esc(currentEntity.canonical_name)}</h1>
 
-        ${badge(currentEntity.verification_status)}
-      </header>
+    <code>${esc(currentEntity.entity_id)}</code>
+
+    <div class="entity-stats">
+      <span class="stat-chip">
+        ${edges.length} Verbindung${edges.length === 1 ? "" : "en"}
+      </span>
+
+      <span class="stat-chip">
+        ${edges.filter(edge => edge.outgoing).length} ausgehend
+      </span>
+
+      <span class="stat-chip">
+        ${edges.filter(edge => !edge.outgoing).length} eingehend
+      </span>
+    </div>
+  </div>
+
+  ${badge(currentEntity.verification_status)}
+</header>
 
       ${renderRelationshipSummary(edges, id)}
 
