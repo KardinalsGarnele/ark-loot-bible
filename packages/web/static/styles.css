@@ -39,22 +39,19 @@
 }
 
 .relationship-meta {
-  display: grid;
-  gap: 0.15rem;
-  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .relationship-type {
-  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text);
 }
 
 .relationship-direction {
-  color: var(--muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  opacity: 0.75;
 }
 
 .relationship-summary span {
@@ -106,10 +103,12 @@
 }
 
 .connection-content strong {
-  font-size: 0.95rem;
+  display: block;
+  font-size: 1rem;
   line-height: 1.35;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
 }
-
 .relationship-summary {
   display: flex;
   align-items: center;
