@@ -140,7 +140,7 @@ const filteredData = data.filter((result) =>
   selectedTypes.includes(result.entity_type),
 );
 
-    status.textContent = filtereddata.length
+    status.textContent = filteredData.length
       ? `${filteredData.length} Ergebnis${filteredData.length === 1 ? "" : "se"}`
       : "Keine passenden Datensätze.";
 
