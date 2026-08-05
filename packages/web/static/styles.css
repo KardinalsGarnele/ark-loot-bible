@@ -51,7 +51,10 @@
 }
 
 .relationship-direction {
-  opacity: 0.75;
+  opacity: 0.6;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.72rem;
 }
 
 .relationship-summary span {
