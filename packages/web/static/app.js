@@ -408,7 +408,7 @@ async function showEntity(id) {
       <section class="panel">
         <div class="section-title">
           <h2>Verbindungen</h2>
-          <span>${edges.length} Kanten</span>
+          <span>${edges.length} Beziehung${edges.length === 1 ? "" : "en"}</span>
         </div>
 
         <div class="relationship-groups">
