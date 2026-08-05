@@ -232,31 +232,37 @@ function renderRelationship(relationship) {
   } = relationship;
 
   return `
-    <a
-      href="${entityUrl(relatedEntityId)}"
-      class="connection"
-    >
-      <span class="direction" aria-hidden="true">
-        ${outgoing ? "→" : "←"}
-      </span>
+  <a
+    href="${entityUrl(relatedEntityId)}"
+    class="connection"
+  >
+    <span class="direction" aria-hidden="true">
+      ${outgoing ? "→" : "←"}
+    </span>
 
-      <span class="connection-icon" aria-hidden="true">
-        ${entityIcon(relatedEntity.entity_type)}
-      </span>
+    <span class="connection-icon" aria-hidden="true">
+      ${entityIcon(relatedEntity.entity_type)}
+    </span>
 
-      <div class="connection-content">
-        <strong>${esc(relatedEntity.canonical_name)}</strong>
-
-        <small>
+    <div class="connection-content">
+      <div class="result-card-top">
+        <span class="entity-type">
           ${esc(entityLabel(relatedEntity.entity_type))}
-          ·
-          ${outgoing ? "Ausgehend" : "Eingehend"}
-        </small>
+        </span>
+
+        ${badge(edge.verification_status || "UNKNOWN")}
       </div>
 
-      ${badge(edge.verification_status || "UNKNOWN")}
-    </a>
-  `;
+      <strong>${esc(relatedEntity.canonical_name)}</strong>
+
+      <small class="relationship-summary">
+        ${esc(edge.edge_type.replaceAll("_", " "))}
+        •
+        ${outgoing ? "Ausgehend" : "Eingehend"}
+      </small>
+    </div>
+  </a>
+`;
 }
 
 function renderRelationshipGroups(edges, currentEntityId, nodes) {
