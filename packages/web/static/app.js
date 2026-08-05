@@ -392,7 +392,7 @@ async function showEntity(id) {
   ${badge(currentEntity.verification_status)}
 </header>
 
-      ${renderRelationshipSummary(edges, id)}
+      
 
       <section class="panel">
         <div class="section-title">
