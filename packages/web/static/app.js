@@ -13,6 +13,111 @@ const typeFilters = () =>
       '.search-filters input[type="checkbox"]:checked:not(#filter-all)',
     ),
   ].map((filter) => filter.value);
+
+const translations = {
+  de: {
+    search: "Suche",
+    searchButton: "Suchen",
+    searchPlaceholder: "Rex, Sattel, Blueprint …",
+    preview: "Entwicklungsvorschau anzeigen",
+    all: "Alle",
+    overview: "Überblick",
+    relationships: "Verbindungen",
+    relationshipsCount: "Beziehungen",
+    incoming: "Eingehend",
+    outgoing: "Ausgehend",
+    searchPrompt: "Suchbegriff eingeben.",
+    relationshipCount: (count) =>
+  `${count} Beziehung${count === 1 ? "" : "en"}`,
+    results: (count) => `${count} Ergebnis${count === 1 ? "" : "se"}`,
+    noResults: "Keine passenden Datensätze.",
+  },
+
+  en: {
+    search: "Search",
+    searchButton: "Search",
+    searchPlaceholder: "Rex, Saddle, Blueprint …",
+    preview: "Show development preview",
+    all: "All",
+    overview: "Overview",
+    relationships: "Relationships",
+    relationshipsCount: "Relationships",
+    incoming: "Incoming",
+    outgoing: "Outgoing",
+    searchPrompt: "Enter a search term.",
+    relationshipCount: (count) =>
+  `${count} relationship${count === 1 ? "" : "s"}`,
+    results: (count) => `${count} result${count === 1 ? "" : "s"}`,
+    noResults: "No matching records.",
+  },
+};
+
+let language = localStorage.getItem("language") || "de";
+
+function t(key) {
+  return translations[language]?.[key] ?? translations.de[key] ?? key;
+
+function applyLanguage() {
+  document.documentElement.lang = language;
+
+  document
+    .querySelectorAll(".lang-button")
+    .forEach((button) => {
+      button.classList.toggle(
+        "active",
+        button.dataset.lang === language,
+      );
+    });
+
+const allFilterLabel = document.querySelector(".filter-all span");
+
+if (allFilterLabel) {
+  allFilterLabel.childNodes[0].textContent = `${t("all")} `;
+}
+
+  input.placeholder = t("searchPlaceholder");
+
+  const searchButton = form.querySelector("button");
+  if (searchButton) {
+    searchButton.textContent = t("searchButton");
+  }
+
+  const previewLabel = document.querySelector(
+    'label.toggle',
+  );
+
+  if (previewLabel) {
+    previewLabel.lastChild.textContent = ` ${t("preview")}`;
+  }
+}
+
+document
+  .querySelectorAll(".lang-button")
+  .forEach((button) => {
+    button.addEventListener("click", () => {
+      language = button.dataset.lang;
+      localStorage.setItem("language", language);
+      applyLanguage();
+
+      const query = input.value.trim();
+      if (query) {
+        search(query);
+      }
+
+      const match = location.hash.match(
+        /^#\/entity\/(.+)$/,
+      );
+
+      if (match) {
+        showEntity(
+          decodeURIComponent(match[1]),
+        );
+      }
+    });
+  });
+
+applyLanguage();
+
 const labels = {
   CREATURE: "Creature",
   CREATURE_VARIANT: "Variant",
@@ -124,7 +229,7 @@ async function search(query = input.value.trim()) {
   results.innerHTML = "";
 
 if (!query) {
-  status.textContent = "Suchbegriff eingeben.";
+  status.textContent = t("searchPrompt");
 
   document
     .querySelectorAll("[data-filter-count]")
@@ -166,8 +271,8 @@ const filteredData = data.filter((result) =>
 );
 
     status.textContent = filteredData.length
-      ? `${filteredData.length} Ergebnis${filteredData.length === 1 ? "" : "se"}`
-      : "Keine passenden Datensätze.";
+      ? t("results")(filteredData.length)
+      : t("noResults");
 
     results.innerHTML = filteredData.map(renderSearchResult).join("");
   } catch (error) {
@@ -295,7 +400,7 @@ function renderRelationship(relationship) {
   </div>
 
   <small class="relationship-direction">
-    ${outgoing ? "Ausgehend" : "Eingehend"}
+    ${outgoing ? t("outgoing") : t("incoming")}
   </small>
 </div>
     </div>
@@ -430,7 +535,7 @@ async function showEntity(id) {
 
       <section class="panel">
         <div class="section-title">
-          <h2>Überblick</h2>
+          <h2>${t("overview")}</h2>
           <span>${esc(entityLabel(currentEntity.entity_type))}</span>
         </div>
 
@@ -441,8 +546,8 @@ async function showEntity(id) {
 
       <section class="panel">
         <div class="section-title">
-          <h2>Verbindungen</h2>
-          <span>${edges.length} Beziehung${edges.length === 1 ? "" : "en"}</span>
+          <h2>${t("relationships")}</h2>
+          <span>${t("relationshipCount")(edges.length)}</span>
         </div>
 
         <div class="relationship-groups">
