@@ -24,16 +24,34 @@
 </form>
 
 <div class="search-filters" aria-label="Entity-Typen">
-  <label class="filter-all">
+<label class="filter-all">
   <input id="filter-all" type="checkbox" checked>
-  Alle
+  <span>Alle <span class="filter-count" data-filter-count="ALL"></span></span>
 </label>
-  <label><input type="checkbox" value="CREATURE" checked> Creature</label>
-  <label><input type="checkbox" value="ITEM" checked> Item</label>
-  <label><input type="checkbox" value="BLUEPRINT" checked> Blueprint</label>
-  <label><input type="checkbox" value="LOOT_SET" checked> Loot Set</label>
-  <label><input type="checkbox" value="LOOT_ENTRY" checked> Loot Entry</label>
-  <label><input type="checkbox" value="CREATURE_VARIANT" checked> Variant</label>
+<label>
+  <input type="checkbox" value="CREATURE" checked>
+  <span>Creature <span class="filter-count" data-filter-count="CREATURE"></span></span>
+</label>
+ <label>
+  <input type="checkbox" value="ITEM" checked>
+  <span>Item <span class="filter-count" data-filter-count="ITEM"></span></span>
+</label>
+  <label>
+  <input type="checkbox" value="BLUEPRINT" checked>
+  <span>Blueprint <span class="filter-count" data-filter-count="BLUEPRINT"></span></span>
+</label>
+<label>
+  <input type="checkbox" value="LOOT_SET" checked>
+  <span>Loot Set <span class="filter-count" data-filter-count="LOOT_SET"></span></span>
+</label>
+<label>
+  <input type="checkbox" value="LOOT_ENTRY" checked>
+  <span>Loot Entry <span class="filter-count" data-filter-count="LOOT_ENTRY"></span></span>
+</label>
+<label>
+  <input type="checkbox" value="CREATURE_VARIANT" checked>
+  <span>Variant <span class="filter-count" data-filter-count="CREATURE_VARIANT"></span></span>
+</label>
 </div>
     <label class="toggle"><input id="preview" type="checkbox"> Entwicklungsvorschau anzeigen</label>
     <section id="status" class="status" aria-live="polite"></section><section id="results" class="grid"></section>

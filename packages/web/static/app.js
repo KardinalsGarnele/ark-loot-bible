@@ -123,10 +123,17 @@ function renderSearchResult(result) {
 async function search(query = input.value.trim()) {
   results.innerHTML = "";
 
-  if (!query) {
-    status.textContent = "Suchbegriff eingeben.";
-    return;
-  }
+if (!query) {
+  status.textContent = "Suchbegriff eingeben.";
+
+  document
+    .querySelectorAll("[data-filter-count]")
+    .forEach((counter) => {
+      counter.textContent = "";
+    });
+
+  return;
+}
 
   input.value = query;
   status.textContent = "Suche …";
@@ -135,6 +142,22 @@ async function search(query = input.value.trim()) {
     const data = await json(
       `/api/v1/search?q=${encodeURIComponent(query)}&include_unverified=${preview.checked}`,
     );
+
+    const counts = data.reduce(
+  (acc, result) => {
+    acc.ALL += 1;
+    acc[result.entity_type] = (acc[result.entity_type] || 0) + 1;
+    return acc;
+  },
+  { ALL: 0 },
+);
+
+document
+  .querySelectorAll("[data-filter-count]")
+  .forEach((counter) => {
+    const type = counter.dataset.filterCount;
+    counter.textContent = `(${counts[type] || 0})`;
+  });
 
 const selectedTypes = typeFilters();
 
