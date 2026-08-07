@@ -56,6 +56,7 @@ let language = localStorage.getItem("language") || "de";
 
 function t(key) {
   return translations[language]?.[key] ?? translations.de[key] ?? key;
+}
 
 function applyLanguage() {
   document.documentElement.lang = language;
