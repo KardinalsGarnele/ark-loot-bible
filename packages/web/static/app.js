@@ -8,9 +8,11 @@ const status = $("#status");
 const results = $("#results");
 const preview = $("#preview");
 const typeFilters = () =>
-  [...document.querySelectorAll(".search-filters input:checked")]
-    .map((filter) => filter.value);
-
+  [
+    ...document.querySelectorAll(
+      '.search-filters input[type="checkbox"]:checked:not(#filter-all)',
+    ),
+  ].map((filter) => filter.value);
 const labels = {
   CREATURE: "Creature",
   CREATURE_VARIANT: "Variant",
@@ -479,17 +481,43 @@ form.addEventListener("submit", (event) => {
   search(query);
 });
 
-document
-  .querySelectorAll(".search-filters input")
-  .forEach((filter) => {
-    filter.addEventListener("change", () => {
-      const query = input.value.trim();
+const allFilter = document.querySelector("#filter-all");
 
-      if (query) {
-        search(query);
-      }
-    });
+const entityFilters = [
+  ...document.querySelectorAll(
+    '.search-filters input[type="checkbox"]:not(#filter-all)',
+  ),
+];
+
+function refreshFilterState() {
+  allFilter.checked = entityFilters.every((filter) => filter.checked);
+}
+
+allFilter.addEventListener("change", () => {
+  entityFilters.forEach((filter) => {
+    filter.checked = allFilter.checked;
   });
+
+  const query = input.value.trim();
+
+  if (query) {
+    search(query);
+  }
+});
+
+entityFilters.forEach((filter) => {
+  filter.addEventListener("change", () => {
+    refreshFilterState();
+
+    const query = input.value.trim();
+
+    if (query) {
+      search(query);
+    }
+  });
+});
+
+refreshFilterState();
 
 window.addEventListener("hashchange", route);
 
